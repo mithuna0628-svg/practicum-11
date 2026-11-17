@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BizHive - Business Management</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7f5;
+    color: #203c32;
+}
+
+/* Navigation */
+
+.navbar {
+    background: #203c32;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    font-size: 27px;
+}
+
+.navbar span {
+    color: #a8d5b5;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #a8d5b5;
+}
+
+/* Hero */
+
+.hero {
+    background: #e4eee7;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+.hero h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #557064;
+}
+
+/* Business services */
+
+.section-title {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    padding: 15px 35px;
+}
+
+.service-card {
+    background: white;
+    padding: 22px 12px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border-bottom: 4px solid #4d8068;
+}
+
+.service-card h3 {
+    margin: 12px 0;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 13px;
+}
+
+.service-icon {
+    font-size: 35px;
+}
+
+/* Registration form */
+
+.form-container {
+    width: 60%;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border: 2px solid #4d8068;
+}
+
+/* Submit button */
+
+button {
+    width: 45%;
+    display: block;
+    margin: 20px auto;
+    padding: 12px;
+    background: #203c32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4d8068;
+}
+
+/* Messages */
+
+#message {
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* Result */
+
+.result {
+    display: none;
+    background: #e8f1eb;
+    border-left: 5px solid #4d8068;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    line-height: 2;
+}
+
+.result h3 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* Footer */
+
+footer {
+    background: #203c32;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Responsive */
+
+@media(max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .service-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-container {
+        width: 90%;
+    }
+}
+
+@media(max-width: 400px) {
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+
+<nav class="navbar">
+
+    <h1>Biz<span>Hive</span></h1>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#register">Register</a>
+    </div>
+
+</nav>
+
+<!-- Home -->
+
+<section class="hero" id="home">
+
+    <h2>Welcome to BizHive Business Hub</h2>
+
+    <p>
+        Manage Your Business, Connect and Grow Together.
+    </p>
+
+</section>
+
+<!-- Business Services -->
+
+<h2 class="section-title" id="services">
+    Our Business Services
+</h2>
+
+<div class="service-container">
+
+    <div class="service-card">
+        <div class="service-icon">💼</div>
+        <h3>Business Planning</h3>
+        <p>Plan and develop your business activities.</p>
+    </div>
+
+    <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Marketing</h3>
+        <p>Improve business growth and marketing.</p>
+    </div>
+
+    <div class="service-card">
+        <div class="service-icon">💰</div>
+        <h3>Finance</h3>
+        <p>Manage business financial information.</p>
+    </div>
+
+    <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Technology</h3>
+        <p>Develop digital business solutions.</p>
+    </div>
+
+</div>
+
+<!-- Business Registration -->
+
+<div class="form-container" id="register">
+
+    <h2>Business Registration Form</h2>
+
+    <p class="subtitle">
+        Enter Your Business Details
+    </p>
+
+    <div class="form-group">
+
+        <label for="owner">Business Owner Name</label>
+
+        <input type="text" id="owner"
+        placeholder="Enter owner name">
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="business">Business Name</label>
+
+        <input type="text" id="business"
+        placeholder="Enter business name">
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="email">Email Address</label>
+
+        <input type="email" id="email"
+        placeholder="Enter email address">
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="phone">Contact Number</label>
+
+        <input type="text" id="phone"
+        placeholder="Enter 10 digit phone number">
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="category">Business Category</label>
+
+        <select id="category">
+
+            <option value="">Select Business Category</option>
+            <option>Technology</option>
+            <option>Education</option>
+            <option>Finance</option>
+            <option>Healthcare</option>
+            <option>Marketing</option>
+            <option>Retail</option>
+
+        </select>
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="employees">Number of Employees</label>
+
+        <input type="text" id="employees"
+        placeholder="Enter employee count">
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="description">Business Description</label>
+
+        <textarea id="description" rows="3"
+        placeholder="Describe your business"></textarea>
+
+    </div>
+
+    <button type="button" onclick="processForm()">
+        Submit Registration
+    </button>
+
+    <p id="message"></p>
+
+    <!-- Display Result -->
+
+    <div class="result" id="result">
+
+        <h3>Business Registration Details</h3>
+
+        <p id="ownerResult"></p>
+        <p id="businessResult"></p>
+        <p id="emailResult"></p>
+        <p id="phoneResult"></p>
+        <p id="categoryResult"></p>
+        <p id="employeesResult"></p>
+        <p id="descriptionResult"></p>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+    <p>© 2026 BizHive Business Hub. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+// Function to process form
+
+function processForm() {
+
+    // Get input values
+
+    let owner = document.getElementById("owner").value.trim();
+
+    let business = document.getElementById("business").value.trim();
+
+    let email = document.getElementById("email").value.trim();
+
+    let phone = document.getElementById("phone").value.trim();
+
+    let category = document.getElementById("category").value;
+
+    let employees = document.getElementById("employees").value.trim();
+
+    let description = document.getElementById("description").value.trim();
+
+    let message = document.getElementById("message");
+
+    let result = document.getElementById("result");
+
+    // Check empty fields
+
+    if (
+        owner === "" ||
+        business === "" ||
+        email === "" ||
+        phone === "" ||
+        category === "" ||
+        employees === "" ||
+        description === ""
+    ) {
+
+        message.style.color = "red";
+        message.innerHTML = "Please fill all the fields!";
+
+        result.style.display = "none";
+
+    }
+
+    // Check name
+
+    else if (!/^[A-Za-z ]+$/.test(owner)) {
+
+        message.style.color = "red";
+        message.innerHTML = "Enter a valid owner name!";
+
+        result.style.display = "none";
+
+    }
+
+    // Check email
+
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+
+        message.style.color = "red";
+        message.innerHTML = "Enter a valid email address!";
+
+        result.style.display = "none";
+
+    }
+
+    // Check phone number
+
+    else if (!/^[0-9]{10}$/.test(phone)) {
+
+        message.style.color = "red";
+        message.innerHTML = "Phone number must contain 10 digits!";
+
+        result.style.display = "none";
+
+    }
+
+    // Check employee numbers
+
+    else if (!/^[0-9]+$/.test(employees)) {
+
+        message.style.color = "red";
+        message.innerHTML = "Employee count must contain numbers only!";
+
+        result.style.display = "none";
+
+    }
+
+    // All conditions satisfied
+
+    else {
+
+        displayDetails(
+            owner,
+            business,
+            email,
+            phone,
+            category,
+            employees,
+            description
+        );
+
+        message.style.color = "#203c32";
+
+        message.innerHTML =
+        "Business Registered Successfully!";
+
+        result.style.display = "block";
+
+    }
+
+}
+
+// Function to display details
+
+function displayDetails(
+    owner,
+    business,
+    email,
+    phone,
+    category,
+    employees,
+    description
+) {
+
+    document.getElementById("ownerResult").innerHTML =
+        "<b>Owner Name:</b> " + escapeHTML(owner);
+
+    document.getElementById("businessResult").innerHTML =
+        "<b>Business Name:</b> " + escapeHTML(business);
+
+    document.getElementById("emailResult").innerHTML =
+        "<b>Email:</b> " + escapeHTML(email);
+
+    document.getElementById("phoneResult").innerHTML =
+        "<b>Contact Number:</b> " + escapeHTML(phone);
+
+    document.getElementById("categoryResult").innerHTML =
+        "<b>Category:</b> " + escapeHTML(category);
+
+    document.getElementById("employeesResult").innerHTML =
+        "<b>Employees:</b> " + escapeHTML(employees);
+
+    document.getElementById("descriptionResult").innerHTML =
+        "<b>Description:</b> " + escapeHTML(description);
+
+}
+
+// Safely display entered text
+
+function escapeHTML(value) {
+
+    return value.replace(/[&<>"']/g, function(char) {
+
+        return {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        }[char];
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
